@@ -21,7 +21,7 @@ jobs:
         id: deploy
         uses: webfactory/create-aws-codedeploy-deployment@v0.2.2
         with:
-              application: YoutubeDemoApplication
+              application: ammar-cdg
       # - name : Print Commit Message
       #   uses: peter-evans/commit-comment@v2
       #   with:
