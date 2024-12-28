@@ -8,6 +8,6 @@ file_exists_behavior: OVERWRITE
 branch_config:
     wip\/.*: ~ 
     main:
-        deploymentGroupName: YoutubeDemo-DG
+        deploymentGroupName: ammar-cdg
         deploymentGroupConfig:
-            serviceRoleArn: arn:aws:iam::276313926502:role/CodeDeployTestApplication
+            serviceRoleArn: aarn:aws:iam::654654225250:role/code-deploy
