@@ -10,4 +10,4 @@ branch_config:
     main:
         deploymentGroupName: ammar-cdg
         deploymentGroupConfig:
-            serviceRoleArn: aarn:aws:iam::654654225250:role/code-deploy
+            serviceRoleArn: arn:aws:iam::654654225250:role/code-deploy
