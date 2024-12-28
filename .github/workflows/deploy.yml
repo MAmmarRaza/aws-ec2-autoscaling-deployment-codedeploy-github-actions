@@ -1,33 +1,30 @@
-name : Push code to EC2 imaage
+name: Deploy to EC2 via CodeDeploy
+
 on:
   push:
-    branches: main 
+    branches:
+      - main
+
 jobs:
-  build-push-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    environment: AWS_ACCESS_KEY
     steps:
-      - name : Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v4
-      - name : List directory
-        run : ls -al 
-      - name: "Configure AWS Credentials" 
+
+      - name: List Directory
+        run: ls -al
+
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-      - name : Create Code Deploy
-        id: deploy
+
+      - name: Deploy to AWS CodeDeploy
         uses: webfactory/create-aws-codedeploy-deployment@v0.2.2
         with:
-              application: ammar-codedeploy
-      # - name : Print Commit Message
-      #   uses: peter-evans/commit-comment@v2
-      #   with:
-      #         application: YoutubeDemoApplication
-      #         token: ${{ secrets.CODEDEPLOY_TOKEN }}
-      #         body: |
-      #               @${{ github.actor }} this was deployed as [${{ steps.deploy.outputs.deploymentId }}](https://console.aws.amazon.com/codesuite/codedeploy/deployments/${{ steps.deploy.outputs.deploymentId }}?region=us-east-1) to group `${{ steps.deploy.outputs.deploymentGroupName }}`.
-
-            
+          application: ammar-codedeploy
+          deployment-group: ammar-deployment-group
+          revision: ./ # Adjust this if your application code isn't in the root directory
