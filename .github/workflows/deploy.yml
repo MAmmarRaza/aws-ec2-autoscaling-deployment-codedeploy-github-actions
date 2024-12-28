@@ -5,7 +5,7 @@ on:
 jobs:
   build-push-deploy:
     runs-on: ubuntu-latest
-    environment: AWS_Environment
+    environment: AWS_ACCESS_KEY
     steps:
       - name : Checkout Code
         uses: actions/checkout@v4
