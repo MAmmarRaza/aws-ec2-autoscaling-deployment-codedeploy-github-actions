@@ -15,3 +15,6 @@ This repository provides a workflow template and scripts to automate deployments
 ## Video and Blog :
 - https://youtu.be/tiBCdEWWjMU
 - https://www.internetkatta.com/say-goodbye-to-manual-deployments-automate-your-ec2-autoscaling-with-codedeploy-and-github-actions
+
+
+<!-- Security scan triggered at 2026-09-05 07:54:27 -->
